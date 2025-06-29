@@ -1,0 +1,15 @@
+package com.autobots.automanager.repositorios;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.autobots.automanager.entitades.Usuario;
+import com.autobots.automanager.entitades.Venda;
+
+@Repository
+public interface RepositorioVenda extends JpaRepository<Venda, Long>{
+	List<Venda> findByCliente(Usuario cliente);
+
+}
